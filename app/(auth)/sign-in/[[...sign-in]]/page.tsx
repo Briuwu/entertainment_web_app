@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function Page() {
   return (
-    <main className="grid min-h-screen justify-center bg-blue-900 pt-20">
+    <>
       <div>
         <Image
           src="/assets/logo.svg"
@@ -19,6 +19,6 @@ export default function Page() {
           }}
         />
       </div>
-    </main>
+    </>
   );
 }
