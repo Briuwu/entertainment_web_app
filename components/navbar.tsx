@@ -34,12 +34,12 @@ export const Navbar = () => {
     },
   ];
   return (
-    <header className="mb-6 flex items-center justify-between bg-blue-700 px-4 py-5">
+    <header className="mb-6 flex items-center justify-between bg-blue-700 px-4 py-5 lg:fixed lg:bottom-4 lg:left-8 lg:top-4 lg:mb-0 lg:w-24 lg:flex-col lg:rounded-lg">
       <Link href="/">
         <Image src="/assets/logo.svg" alt="" width={33} height={27} />
       </Link>
       <nav>
-        <ul className="flex items-center gap-6">
+        <ul className="flex items-center gap-6 lg:flex-col">
           {nav_items.map((item, idx) => (
             <li key={idx}>
               <Link href={item.href}>

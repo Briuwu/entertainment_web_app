@@ -8,7 +8,7 @@ function MainLayout({
   return (
     <>
       <Navbar />
-      {children}
+      <div className="lg:my-16 lg:ml-[164px]">{children}</div>
     </>
   );
 }

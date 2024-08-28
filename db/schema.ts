@@ -20,25 +20,8 @@ export const films = pgTable("films", {
   rating: ratingsEnum("rating").notNull(),
   category: categoryEnum("category").notNull(),
   isTrending: boolean("is_trending").notNull(),
-  imageId: integer("image_id"),
   created_at: timestamp("created_at").notNull().defaultNow(),
 });
-
-export const images = pgTable("images", {
-  id: serial("id").primaryKey(),
-  small: text("small").notNull(),
-  medium: text("medium").notNull(),
-  large: text("large").notNull(),
-
-  filmId: integer("film_id").references(() => films.id),
-});
-
-export const imageRelations = relations(images, ({ one }) => ({
-  film: one(films, {
-    fields: [images.filmId],
-    references: [films.id],
-  }),
-}));
 
 export const bookmarks = pgTable("bookmarks", {
   id: serial("id").primaryKey(),
