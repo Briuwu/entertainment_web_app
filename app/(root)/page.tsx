@@ -6,6 +6,7 @@ import {
   getSearchedFilms,
 } from "@/actions/films";
 import { Cards } from "@/components/cards";
+import { getAllBookmarks } from "@/actions/bookmark";
 
 async function Home({ searchParams }: { searchParams: { q?: string } }) {
   const films = await getAllFilms();
@@ -15,6 +16,7 @@ async function Home({ searchParams }: { searchParams: { q?: string } }) {
 
   const searchedFilms = await getSearchedFilms(searchParams?.q || "");
 
+  const bookmarks = await getAllBookmarks();
   return (
     <main>
       <div className="space-y-6 px-4">
@@ -30,7 +32,7 @@ async function Home({ searchParams }: { searchParams: { q?: string } }) {
           <>
             <section className="space-y-4">
               <h1 className="text-xl">Trending</h1>
-              <Trending films={trendingFilms} />
+              <Trending films={trendingFilms} bookmarks={bookmarks} />
             </section>
             <section className="space-y-4">
               <h2 className="text-xl">Recommended for you</h2>

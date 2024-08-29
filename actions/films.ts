@@ -1,7 +1,7 @@
 "use server";
 
 import { db } from "@/db";
-import { films } from "@/db/schema";
+import { bookmarks, films } from "@/db/schema";
 import { and, eq, ilike, sql } from "drizzle-orm";
 import { cache } from "react";
 
